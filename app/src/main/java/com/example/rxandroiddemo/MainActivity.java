@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gotoSimpleModule();
+        gotoOtherModule();
     }
 
     // 跳转简单的页面
@@ -23,5 +23,10 @@ public class MainActivity extends AppCompatActivity {
     // 跳转复杂的页面
     public void gotoMoreModule() {
         startActivity(new Intent(this, MoreActivity.class));
+    }
+
+    //跳转其他的页面
+    public void gotoOtherModule() {
+        startActivity(new Intent(this, OtherActivity.class));
     }
 }
