@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gotoOtherModule();
+        gotoMoreModule();
     }
 
     // 跳转简单的页面
@@ -28,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
     //跳转其他的页面
     public void gotoOtherModule() {
         startActivity(new Intent(this, OtherActivity.class));
+    }
+
+    //跳转测试的页面
+    public void gotoTestModule() {
+        startActivity(new Intent(this, TestActivity.class));
     }
 }

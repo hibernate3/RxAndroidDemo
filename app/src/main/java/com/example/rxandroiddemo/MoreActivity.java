@@ -71,25 +71,25 @@ public class MoreActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // 添加字符串, 省略Action的其他方法, 只使用一个onNext.
-        Observable<String> obShow = Observable.just(sayMyName());
+//        Observable<String> obShow = Observable.just(sayMyName());
 
         // 先映射, 再设置TextView
-        obShow.observeOn(AndroidSchedulers.mainThread())
-                .map(mUpperLetterFunc).subscribe(mTextViewAction);
+//        obShow.observeOn(AndroidSchedulers.mainThread())
+//                .map(mUpperLetterFunc).subscribe(mTextViewAction);
 
         // 单独显示数组中的每个元素
-        Observable<String> obMap = Observable.from(mManyWords);
+//        Observable<String> obMap = Observable.from(mManyWords);
 
         // 映射之后分发
-        obMap.observeOn(AndroidSchedulers.mainThread())
-                .map(mUpperLetterFunc).subscribe(mToastAction);
+//        obMap.observeOn(AndroidSchedulers.mainThread())
+//                .map(mUpperLetterFunc).subscribe(mToastAction);
 
         // 优化过的代码, 直接获取数组, 再分发, 再合并, 再显示toast, Toast顺次执行.
-//        Observable.just(mManyWordList)
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .flatMap(mOneLetterFunc)
-//                .reduce(mMergeStringFunc)
-//                .subscribe(mToastAction);
+        Observable.just(mManyWordList)
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(mOneLetterFunc)
+                .reduce(mMergeStringFunc)
+                .subscribe(mToastAction);
     }
 
     // 创建字符串
