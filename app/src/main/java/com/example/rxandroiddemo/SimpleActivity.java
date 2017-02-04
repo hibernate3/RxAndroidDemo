@@ -2,6 +2,7 @@ package com.example.rxandroiddemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,6 +11,7 @@ import butterknife.ButterKnife;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class SimpleActivity extends AppCompatActivity {
     @Bind(R.id.simple_tv_text)
@@ -71,7 +73,6 @@ public class SimpleActivity extends AppCompatActivity {
         Observable<String> observable = Observable.create(mObservableAction);
 
         // 分发订阅信息
-        observable.observeOn(AndroidSchedulers.mainThread());
         observable.subscribe(mTextSubscriber);
         observable.subscribe(mToastSubscriber);
     }

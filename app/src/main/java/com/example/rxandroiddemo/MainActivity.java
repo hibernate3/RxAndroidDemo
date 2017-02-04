@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gotoMoreModule();
+        gotoSimpleModule();
     }
 
     // 跳转简单的页面
