@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RxAndroidDemo.iml" filepath="$PROJECT_DIR$/RxAndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rxbus/rxbus.iml" filepath="$PROJECT_DIR$/rxbus/rxbus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rx2/rx2.iml" filepath="$PROJECT_DIR$/rx2/rx2.iml" />
     </modules>
   </component>
 </project>
