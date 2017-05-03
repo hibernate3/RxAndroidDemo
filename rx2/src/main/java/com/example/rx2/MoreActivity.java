@@ -29,7 +29,6 @@ public class MoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more);
 
-        sampleTest();
     }
 
     private void mapTest() {

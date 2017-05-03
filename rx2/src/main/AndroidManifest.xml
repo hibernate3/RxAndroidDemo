@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".MoreActivity">
         </activity>
+        <activity android:name=".AdvancedActivity">
+        </activity>
     </application>
 
 </manifest>

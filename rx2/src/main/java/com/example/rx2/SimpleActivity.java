@@ -26,11 +26,19 @@ public class SimpleActivity extends AppCompatActivity {
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
                 Log.d(TAG, "Observable thread is : " + Thread.currentThread().getName());
 
+                Log.d(TAG, "emit 1");
                 emitter.onNext(1);
+
+                Log.d(TAG, "emit 2");
                 emitter.onNext(2);
+
+                Log.d(TAG, "emit 3");
                 emitter.onNext(3);
+
+                Log.d(TAG, "emit 4");
                 emitter.onNext(4);
 
+                Log.d(TAG, "emit complete");
                 emitter.onComplete();
             }
         });
@@ -75,12 +83,12 @@ public class SimpleActivity extends AppCompatActivity {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        Log.d(TAG, "error");
+                        Log.d(TAG, "onError");
                     }
                 }, new Action() {
                     @Override
                     public void run() throws Exception {
-                        Log.d(TAG, "complete");
+                        Log.d(TAG, "onComplete");
                     }
                 }, new Consumer<Disposable>() {
                     @Override
